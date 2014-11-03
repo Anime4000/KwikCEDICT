@@ -30,7 +30,7 @@
         {
             this.txtInput = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.rtbDisplay = new System.Windows.Forms.RichTextBox();
+            this.htmlView = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
             // 
             // txtInput
@@ -50,21 +50,20 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // rtbDisplay
+            // htmlView
             // 
-            this.rtbDisplay.Font = new System.Drawing.Font("Adobe Kaiti Std R", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.rtbDisplay.Location = new System.Drawing.Point(12, 41);
-            this.rtbDisplay.Name = "rtbDisplay";
-            this.rtbDisplay.Size = new System.Drawing.Size(600, 388);
-            this.rtbDisplay.TabIndex = 2;
-            this.rtbDisplay.Text = "";
+            this.htmlView.Location = new System.Drawing.Point(12, 40);
+            this.htmlView.MinimumSize = new System.Drawing.Size(20, 20);
+            this.htmlView.Name = "htmlView";
+            this.htmlView.Size = new System.Drawing.Size(600, 389);
+            this.htmlView.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 441);
-            this.Controls.Add(this.rtbDisplay);
+            this.Controls.Add(this.htmlView);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtInput);
             this.Font = new System.Drawing.Font("Tahoma", 8F);
@@ -79,7 +78,7 @@
 
         private System.Windows.Forms.TextBox txtInput;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.RichTextBox rtbDisplay;
+        private System.Windows.Forms.WebBrowser htmlView;
     }
 }
 

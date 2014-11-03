@@ -8,7 +8,9 @@ namespace KwikCEDICT.Framework
 {
     public class Cedict
     {
-        private static string Dict = Path.Combine(".", "cedict_ts.u8");
+        private static string CurrentDir = Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
+        private static string Dict = Path.Combine(CurrentDir, "cedict_ts.u8");
+        private static string Html = Path.Combine(Path.GetTempPath(), "kwikCEDIT_index.html");
 
         public static string GetDict(string input)
         {
@@ -81,7 +83,11 @@ namespace KwikCEDICT.Framework
                 {
                     English = English.Substring(1, English.Length - 1); // Remove first char '/'
                     English = English.Remove(English.Length - 1); // Remove last char '/'
-                    ReturnThis = String.Format("Simplified: {0}\nTraditional: {1}\nPinyin: {2}\nEnglish: {3}", NewChinese, OldChinese, Pinyin, English);
+
+                    string Content = String.Format(Properties.Resources.htmlBody, NewChinese, OldChinese, Pinyin, English);
+                    Content = Properties.Resources.htmlHead + Content;
+                    File.WriteAllText(Html, Content);
+                    ReturnThis = Html;
                     break;
                 }
             }

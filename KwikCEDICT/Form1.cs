@@ -19,7 +19,7 @@ namespace KwikCEDICT
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            rtbDisplay.Text = Cedict.GetDict(txtInput.Text);
+            htmlView.Navigate(Cedict.GetDict(txtInput.Text));
         }
     }
 }
