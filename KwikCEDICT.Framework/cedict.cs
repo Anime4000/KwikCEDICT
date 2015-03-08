@@ -8,7 +8,7 @@ namespace KwikCEDICT.Framework
 {
     public class Cedict
     {
-        private static string Dict = Path.Combine(".", "cedict_ts.u8");
+		private static string Dict = Path.Combine(".", "cedict_1_0_ts_utf-8_mdbg.txt");
 
         public static string GetDict(string input)
         {
