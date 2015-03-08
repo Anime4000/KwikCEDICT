@@ -81,7 +81,6 @@ namespace KwikCEDICT.Framework
                 {
                     English = English.Substring(1, English.Length - 1); // Remove first char '/'
                     English = English.Remove(English.Length - 1); // Remove last char '/'
-                    ReturnThis = String.Format("Simplified: {0}\nTraditional: {1}\nPinyin: {2}\nEnglish: {3}", NewChinese, OldChinese, Pinyin, English);
                     break;
                 }
             }
